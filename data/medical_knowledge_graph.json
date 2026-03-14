@@ -1,0 +1,28 @@
+{
+  "flu": {
+    "symptoms": ["fever", "cough", "fatigue", "headache", "sore throat"],
+    "risk_factors": ["cold exposure", "weak immunity"],
+    "emergency_signs": ["difficulty breathing"],
+    "treatments": ["paracetamol", "ibuprofen"],
+    "doctor": "general physician",
+    "severity": "mild"
+  },
+
+  "migraine": {
+    "symptoms": ["headache", "nausea", "vomiting", "sensitivity to light"],
+    "risk_factors": ["stress", "lack of sleep"],
+    "emergency_signs": [],
+    "treatments": ["ibuprofen", "sumatriptan"],
+    "doctor": "neurologist",
+    "severity": "moderate"
+  },
+
+  "gastritis": {
+    "symptoms": ["abdominal pain", "nausea", "vomiting"],
+    "risk_factors": ["spicy food", "alcohol"],
+    "emergency_signs": ["blood vomiting"],
+    "treatments": ["antacids", "omeprazole"],
+    "doctor": "gastroenterologist",
+    "severity": "moderate"
+  }
+}

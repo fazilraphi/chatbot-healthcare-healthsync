@@ -1,0 +1,18 @@
+{
+  "headache": [
+    "head hurts",
+    "head pain",
+    "migraine pain",
+    "my head is killing me"
+  ],
+  "vomiting": [
+    "throwing up",
+    "feeling sick",
+    "feel like vomiting"
+  ],
+  "fever": [
+    "high temperature",
+    "burning up",
+    "feeling hot"
+  ]
+}

@@ -1,0 +1,301 @@
+disease,medications,precautions,diet,doctor_type,severity
+appendicitis,antibiotics;oral rehydration salts,avoid allergens;monitor symptoms,soft foods,endocrinologist,mild
+meningitis,bronchodilators;paracetamol,hydration;regular exercise,low sugar diet,neurologist,moderate
+gallstones,steroids;antihistamines,monitor symptoms;maintain hygiene,low salt diet,urologist,serious
+crohns disease,proton pump inhibitors;insulin,avoid cold exposure;avoid spicy food,warm fluids,urologist,mild
+pancreatitis,antihistamines;insulin,monitor symptoms;avoid allergens,low salt diet,pulmonologist,moderate
+tuberculosis,antihistamines;ibuprofen,avoid allergens;monitor symptoms,low salt diet,general physician,moderate
+skin abscess,bronchodilators;insulin,hydration;avoid allergens,light diet,cardiologist,serious
+atrial fibrillation,bronchodilators;antihistamines,regular exercise;hydration,warm fluids,neurologist,moderate
+hypertension,oral rehydration salts;steroids,monitor symptoms;regular exercise,low sugar diet,cardiologist,mild
+thyroid cancer,antihistamines;insulin,hydration;avoid cold exposure,high fiber diet,neurologist,serious
+thyroid cancer,antibiotics;steroids,avoid spicy food;monitor symptoms,low salt diet,neurologist,moderate
+gastritis,oral rehydration salts;antihistamines,rest;regular exercise,soft foods,dermatologist,serious
+pleurisy,bronchodilators;ibuprofen,maintain hygiene;rest,low salt diet,dermatologist,mild
+covid-19,antibiotics;oral rehydration salts,hydration;monitor symptoms,low sugar diet,infectious disease specialist,moderate
+lyme disease,insulin;proton pump inhibitors,avoid spicy food;avoid allergens,high fiber diet,neurologist,mild
+cellulitis,antihistamines;insulin,avoid spicy food;regular exercise,balanced diet,pulmonologist,moderate
+constipation,paracetamol;ibuprofen,monitor symptoms;avoid spicy food,light diet,dermatologist,mild
+pericarditis,bronchodilators;ibuprofen,avoid spicy food;hydration,low salt diet,general physician,moderate
+skin abscess,oral rehydration salts;proton pump inhibitors,hydration;monitor symptoms,balanced diet,endocrinologist,serious
+heart failure,antibiotics;bronchodilators,rest;avoid cold exposure,balanced diet,gastroenterologist,mild
+laryngitis,ibuprofen;bronchodilators,regular exercise;monitor symptoms,low sugar diet,dermatologist,serious
+melanoma,antibiotics;paracetamol,avoid allergens;rest,soft foods,endocrinologist,moderate
+rabies,antivirals;oral rehydration salts,avoid allergens;monitor symptoms,warm fluids,infectious disease specialist,serious
+goiter,antihistamines;paracetamol,rest;hydration,balanced diet,urologist,mild
+dengue fever,bronchodilators;antihistamines,hydration;regular exercise,high fiber diet,dermatologist,moderate
+hyperthyroidism,insulin;proton pump inhibitors,avoid spicy food;hydration,low sugar diet,neurologist,serious
+coronary artery disease,oral rehydration salts;proton pump inhibitors,avoid spicy food;rest,low sugar diet,neurologist,mild
+cushing syndrome,antivirals;ibuprofen,regular exercise;avoid allergens,warm fluids,gastroenterologist,serious
+coronary artery disease,ibuprofen;oral rehydration salts,hydration;avoid allergens,balanced diet,cardiologist,serious
+fungal infection,bronchodilators;antihistamines,avoid spicy food;rest,high fiber diet,urologist,serious
+metabolic syndrome,antihistamines;antivirals,regular exercise;avoid cold exposure,soft foods,dermatologist,moderate
+dengue fever,proton pump inhibitors;bronchodilators,regular exercise;avoid spicy food,light diet,cardiologist,serious
+atrial fibrillation,antihistamines;bronchodilators,hydration;avoid cold exposure,light diet,general physician,moderate
+eczema,proton pump inhibitors;insulin,rest;avoid cold exposure,warm fluids,dermatologist,mild
+peripheral neuropathy,insulin;antibiotics,regular exercise;monitor symptoms,low salt diet,dermatologist,moderate
+polycystic ovary syndrome,ibuprofen;proton pump inhibitors,rest;regular exercise,warm fluids,urologist,mild
+concussion,bronchodilators;antibiotics,avoid allergens;regular exercise,soft foods,dermatologist,moderate
+bronchitis,bronchodilators;antihistamines,hydration;rest,warm fluids,dermatologist,moderate
+hypothyroidism,proton pump inhibitors;steroids,maintain hygiene;avoid cold exposure,balanced diet,endocrinologist,mild
+impetigo,bronchodilators;ibuprofen,rest;avoid spicy food,light diet,urologist,mild
+gallstones,antibiotics;proton pump inhibitors,avoid cold exposure;avoid spicy food,low salt diet,endocrinologist,moderate
+cardiomyopathy,bronchodilators;insulin,maintain hygiene;monitor symptoms,warm fluids,general physician,serious
+tension headache,steroids;antibiotics,avoid spicy food;rest,low sugar diet,general physician,mild
+pulmonary fibrosis,steroids;insulin,maintain hygiene;avoid spicy food,high fiber diet,gastroenterologist,moderate
+celiac disease,insulin;antibiotics,avoid cold exposure;hydration,warm fluids,cardiologist,mild
+kidney infection,antivirals;bronchodilators,avoid allergens;rest,high fiber diet,cardiologist,mild
+typhoid fever,oral rehydration salts;bronchodilators,avoid spicy food;regular exercise,warm fluids,cardiologist,serious
+rosacea,paracetamol;steroids,avoid spicy food;hydration,warm fluids,neurologist,serious
+pleurisy,steroids;insulin,maintain hygiene;regular exercise,low sugar diet,pulmonologist,mild
+cluster headache,paracetamol;bronchodilators,avoid spicy food;hydration,soft foods,general physician,moderate
+stroke,oral rehydration salts;paracetamol,avoid spicy food;avoid cold exposure,light diet,gastroenterologist,mild
+influenza,insulin;paracetamol,maintain hygiene;avoid spicy food,high fiber diet,cardiologist,serious
+chronic obstructive pulmonary disease,proton pump inhibitors;antihistamines,monitor symptoms;maintain hygiene,high fiber diet,pulmonologist,serious
+benign prostatic hyperplasia,ibuprofen;antibiotics,avoid cold exposure;monitor symptoms,low sugar diet,neurologist,serious
+acid reflux,ibuprofen;insulin,maintain hygiene;hydration,high fiber diet,general physician,moderate
+multiple sclerosis,proton pump inhibitors;oral rehydration salts,hydration;avoid spicy food,soft foods,endocrinologist,mild
+stroke,insulin;ibuprofen,avoid allergens;avoid cold exposure,soft foods,general physician,moderate
+chickenpox,ibuprofen;insulin,regular exercise;maintain hygiene,low sugar diet,neurologist,serious
+diarrhea,antihistamines;oral rehydration salts,monitor symptoms;regular exercise,high fiber diet,neurologist,moderate
+asthma,antivirals;oral rehydration salts,hydration;regular exercise,low salt diet,infectious disease specialist,serious
+kidney infection,antivirals;bronchodilators,regular exercise;rest,low sugar diet,dermatologist,mild
+food poisoning,ibuprofen;antibiotics,maintain hygiene;avoid allergens,soft foods,neurologist,serious
+concussion,antihistamines;steroids,monitor symptoms;avoid allergens,light diet,general physician,mild
+chickenpox,antivirals;antibiotics,hydration;maintain hygiene,warm fluids,endocrinologist,serious
+food poisoning,steroids;antibiotics,avoid cold exposure;rest,warm fluids,general physician,serious
+constipation,oral rehydration salts;antivirals,regular exercise;maintain hygiene,low sugar diet,general physician,mild
+lyme disease,ibuprofen;antihistamines,avoid cold exposure;monitor symptoms,low sugar diet,endocrinologist,mild
+meningitis,insulin;proton pump inhibitors,avoid cold exposure;monitor symptoms,light diet,neurologist,serious
+zika virus,bronchodilators;paracetamol,avoid allergens;rest,low salt diet,urologist,serious
+dermatitis,proton pump inhibitors;steroids,maintain hygiene;regular exercise,balanced diet,urologist,moderate
+bronchitis,antibiotics;bronchodilators,hydration;rest,balanced diet,dermatologist,moderate
+lyme disease,oral rehydration salts;paracetamol,regular exercise;avoid cold exposure,light diet,infectious disease specialist,mild
+peptic ulcer,antihistamines;oral rehydration salts,avoid allergens;rest,light diet,endocrinologist,moderate
+melanoma,bronchodilators;steroids,maintain hygiene;avoid spicy food,low sugar diet,neurologist,mild
+covid-19,proton pump inhibitors;antihistamines,avoid spicy food;avoid allergens,low sugar diet,cardiologist,moderate
+typhoid fever,antivirals;ibuprofen,avoid allergens;hydration,high fiber diet,general physician,mild
+myocardial infarction,antibiotics;antihistamines,avoid spicy food;hydration,soft foods,infectious disease specialist,moderate
+skin abscess,antihistamines;proton pump inhibitors,maintain hygiene;monitor symptoms,low salt diet,gastroenterologist,serious
+eczema,antibiotics;bronchodilators,monitor symptoms;maintain hygiene,low salt diet,neurologist,moderate
+diabetes mellitus,antibiotics;steroids,avoid cold exposure;avoid allergens,low salt diet,infectious disease specialist,serious
+asthma,ibuprofen;antibiotics,hydration;maintain hygiene,balanced diet,general physician,mild
+kidney infection,paracetamol;insulin,avoid spicy food;rest,high fiber diet,infectious disease specialist,mild
+pancreatitis,paracetamol;ibuprofen,monitor symptoms;avoid cold exposure,low salt diet,general physician,serious
+epilepsy,insulin;paracetamol,avoid cold exposure;rest,soft foods,gastroenterologist,serious
+sinusitis,insulin;oral rehydration salts,rest;monitor symptoms,low sugar diet,pulmonologist,mild
+measles,oral rehydration salts;steroids,regular exercise;monitor symptoms,balanced diet,urologist,moderate
+kidney stones,oral rehydration salts;bronchodilators,monitor symptoms;avoid spicy food,balanced diet,neurologist,mild
+cushing syndrome,steroids;insulin,avoid allergens;rest,warm fluids,infectious disease specialist,moderate
+psoriasis,antibiotics;bronchodilators,hydration;avoid cold exposure,low sugar diet,infectious disease specialist,mild
+stroke,antihistamines;paracetamol,maintain hygiene;rest,warm fluids,gastroenterologist,moderate
+aortic stenosis,antihistamines;antivirals,avoid cold exposure;regular exercise,light diet,infectious disease specialist,mild
+hypertension,antivirals;proton pump inhibitors,rest;regular exercise,high fiber diet,infectious disease specialist,serious
+urticaria,ibuprofen;bronchodilators,avoid allergens;monitor symptoms,light diet,neurologist,serious
+scabies,bronchodilators;proton pump inhibitors,avoid cold exposure;maintain hygiene,light diet,endocrinologist,serious
+fungal infection,proton pump inhibitors;oral rehydration salts,monitor symptoms;maintain hygiene,low salt diet,urologist,mild
+atrial fibrillation,proton pump inhibitors;antihistamines,maintain hygiene;avoid cold exposure,light diet,dermatologist,mild
+myocardial infarction,antivirals;bronchodilators,regular exercise;rest,light diet,neurologist,mild
+fungal infection,antihistamines;insulin,rest;monitor symptoms,light diet,dermatologist,mild
+hepatitis c,bronchodilators;paracetamol,monitor symptoms;rest,high fiber diet,cardiologist,mild
+chronic obstructive pulmonary disease,oral rehydration salts;ibuprofen,monitor symptoms;maintain hygiene,high fiber diet,cardiologist,mild
+measles,steroids;oral rehydration salts,avoid allergens;monitor symptoms,high fiber diet,gastroenterologist,moderate
+measles,oral rehydration salts;insulin,avoid cold exposure;monitor symptoms,high fiber diet,infectious disease specialist,moderate
+cellulitis,proton pump inhibitors;steroids,rest;avoid allergens,high fiber diet,general physician,serious
+zika virus,paracetamol;antivirals,avoid cold exposure;maintain hygiene,balanced diet,general physician,serious
+mumps,insulin;oral rehydration salts,monitor symptoms;regular exercise,soft foods,infectious disease specialist,moderate
+concussion,bronchodilators;antihistamines,maintain hygiene;monitor symptoms,balanced diet,neurologist,serious
+tension headache,antibiotics;ibuprofen,monitor symptoms;hydration,high fiber diet,cardiologist,moderate
+measles,steroids;proton pump inhibitors,avoid allergens;hydration,low salt diet,general physician,mild
+lyme disease,ibuprofen;antihistamines,avoid spicy food;maintain hygiene,high fiber diet,urologist,moderate
+measles,steroids;bronchodilators,hydration;regular exercise,low salt diet,neurologist,serious
+pneumonia,steroids;paracetamol,avoid cold exposure;hydration,high fiber diet,dermatologist,mild
+cardiomyopathy,steroids;paracetamol,avoid allergens;avoid spicy food,low sugar diet,neurologist,mild
+acne,proton pump inhibitors;insulin,hydration;regular exercise,light diet,dermatologist,serious
+diabetes mellitus,ibuprofen;proton pump inhibitors,monitor symptoms;avoid cold exposure,light diet,urologist,moderate
+appendicitis,paracetamol;bronchodilators,avoid allergens;monitor symptoms,low sugar diet,general physician,mild
+acid reflux,antihistamines;antibiotics,rest;maintain hygiene,balanced diet,general physician,moderate
+hypothyroidism,antihistamines;bronchodilators,monitor symptoms;avoid spicy food,soft foods,general physician,serious
+coronary artery disease,bronchodilators;antibiotics,avoid allergens;monitor symptoms,warm fluids,neurologist,serious
+malaria,steroids;oral rehydration salts,avoid spicy food;monitor symptoms,warm fluids,cardiologist,mild
+atrial fibrillation,antihistamines;bronchodilators,monitor symptoms;avoid allergens,warm fluids,neurologist,serious
+arrhythmia,insulin;steroids,maintain hygiene;regular exercise,light diet,cardiologist,moderate
+covid-19,ibuprofen;antibiotics,monitor symptoms;maintain hygiene,soft foods,urologist,mild
+kidney infection,proton pump inhibitors;paracetamol,avoid allergens;hydration,light diet,urologist,mild
+malaria,proton pump inhibitors;insulin,avoid allergens;avoid cold exposure,soft foods,pulmonologist,moderate
+hypertension,steroids;bronchodilators,avoid cold exposure;maintain hygiene,low sugar diet,pulmonologist,mild
+dermatitis,antivirals;antibiotics,avoid cold exposure;monitor symptoms,light diet,infectious disease specialist,serious
+fungal infection,antivirals;antibiotics,hydration;avoid spicy food,low salt diet,neurologist,serious
+kidney stones,paracetamol;antibiotics,avoid allergens;hydration,high fiber diet,infectious disease specialist,serious
+appendicitis,insulin;proton pump inhibitors,avoid spicy food;hydration,warm fluids,infectious disease specialist,moderate
+crohns disease,antibiotics;antihistamines,rest;monitor symptoms,balanced diet,pulmonologist,serious
+melanoma,proton pump inhibitors;bronchodilators,rest;avoid allergens,high fiber diet,neurologist,moderate
+atrial fibrillation,ibuprofen;bronchodilators,avoid allergens;rest,high fiber diet,neurologist,moderate
+cluster headache,proton pump inhibitors;bronchodilators,avoid allergens;maintain hygiene,light diet,general physician,serious
+myocardial infarction,insulin;bronchodilators,avoid cold exposure;avoid allergens,high fiber diet,infectious disease specialist,serious
+hepatitis b,antibiotics;paracetamol,avoid cold exposure;monitor symptoms,low salt diet,endocrinologist,serious
+gallstones,steroids;insulin,hydration;avoid spicy food,soft foods,dermatologist,mild
+crohns disease,antibiotics;proton pump inhibitors,hydration;regular exercise,balanced diet,pulmonologist,mild
+fungal infection,steroids;bronchodilators,rest;maintain hygiene,light diet,gastroenterologist,serious
+meningitis,oral rehydration salts;bronchodilators,regular exercise;avoid cold exposure,soft foods,general physician,serious
+malaria,oral rehydration salts;steroids,regular exercise;maintain hygiene,light diet,gastroenterologist,serious
+pneumonia,oral rehydration salts;insulin,hydration;avoid cold exposure,low sugar diet,general physician,mild
+pleurisy,bronchodilators;ibuprofen,avoid spicy food;avoid cold exposure,low sugar diet,gastroenterologist,mild
+typhoid fever,antihistamines;paracetamol,monitor symptoms;rest,light diet,neurologist,moderate
+cushing syndrome,proton pump inhibitors;steroids,rest;maintain hygiene,warm fluids,gastroenterologist,serious
+polycystic ovary syndrome,oral rehydration salts;insulin,rest;regular exercise,warm fluids,pulmonologist,moderate
+pericarditis,antihistamines;proton pump inhibitors,rest;avoid cold exposure,low salt diet,general physician,mild
+skin abscess,insulin;bronchodilators,monitor symptoms;rest,soft foods,general physician,moderate
+acid reflux,paracetamol;bronchodilators,monitor symptoms;rest,warm fluids,cardiologist,serious
+alzheimer disease,ibuprofen;insulin,regular exercise;hydration,low sugar diet,neurologist,mild
+concussion,insulin;oral rehydration salts,rest;regular exercise,light diet,gastroenterologist,serious
+allergic rhinitis,proton pump inhibitors;oral rehydration salts,maintain hygiene;avoid allergens,low sugar diet,dermatologist,mild
+concussion,oral rehydration salts;ibuprofen,maintain hygiene;avoid allergens,warm fluids,pulmonologist,serious
+psoriasis,bronchodilators;paracetamol,monitor symptoms;avoid allergens,light diet,urologist,moderate
+zika virus,steroids;insulin,regular exercise;avoid spicy food,high fiber diet,endocrinologist,moderate
+measles,antibiotics;oral rehydration salts,maintain hygiene;avoid allergens,light diet,infectious disease specialist,mild
+kidney stones,antibiotics;ibuprofen,avoid allergens;rest,warm fluids,cardiologist,mild
+myocardial infarction,insulin;antihistamines,maintain hygiene;avoid allergens,low salt diet,pulmonologist,mild
+polycystic ovary syndrome,oral rehydration salts;proton pump inhibitors,monitor symptoms;avoid allergens,balanced diet,infectious disease specialist,serious
+atrial fibrillation,antihistamines;paracetamol,hydration;maintain hygiene,warm fluids,urologist,mild
+gallstones,steroids;insulin,maintain hygiene;rest,high fiber diet,dermatologist,mild
+aortic stenosis,paracetamol;steroids,maintain hygiene;avoid cold exposure,low sugar diet,gastroenterologist,mild
+lyme disease,steroids;antivirals,avoid allergens;maintain hygiene,low salt diet,neurologist,moderate
+malaria,proton pump inhibitors;bronchodilators,maintain hygiene;monitor symptoms,balanced diet,pulmonologist,mild
+meningitis,oral rehydration salts;insulin,avoid allergens;monitor symptoms,high fiber diet,endocrinologist,moderate
+asthma,bronchodilators;antihistamines,hydration;avoid spicy food,soft foods,infectious disease specialist,moderate
+crohns disease,bronchodilators;ibuprofen,hydration;avoid spicy food,warm fluids,infectious disease specialist,moderate
+measles,antivirals;ibuprofen,hydration;monitor symptoms,light diet,urologist,moderate
+sinusitis,proton pump inhibitors;ibuprofen,avoid spicy food;regular exercise,low salt diet,neurologist,serious
+epilepsy,steroids;oral rehydration salts,regular exercise;avoid spicy food,high fiber diet,urologist,mild
+alzheimer disease,ibuprofen;insulin,maintain hygiene;avoid cold exposure,high fiber diet,cardiologist,serious
+laryngitis,steroids;bronchodilators,maintain hygiene;avoid cold exposure,low salt diet,infectious disease specialist,serious
+bronchitis,insulin;ibuprofen,avoid cold exposure;rest,balanced diet,gastroenterologist,moderate
+rabies,proton pump inhibitors;antihistamines,avoid cold exposure;monitor symptoms,balanced diet,gastroenterologist,mild
+covid-19,ibuprofen;antibiotics,hydration;avoid allergens,balanced diet,infectious disease specialist,mild
+aortic stenosis,proton pump inhibitors;antivirals,avoid allergens;avoid spicy food,low salt diet,endocrinologist,moderate
+migraine,proton pump inhibitors;oral rehydration salts,monitor symptoms;avoid allergens,warm fluids,endocrinologist,moderate
+hepatitis b,antibiotics;steroids,avoid spicy food;rest,high fiber diet,neurologist,serious
+gallstones,insulin;steroids,monitor symptoms;avoid spicy food,warm fluids,infectious disease specialist,mild
+myocardial infarction,steroids;antihistamines,monitor symptoms;avoid cold exposure,low sugar diet,gastroenterologist,mild
+diarrhea,bronchodilators;oral rehydration salts,monitor symptoms;regular exercise,high fiber diet,pulmonologist,moderate
+pleurisy,antivirals;insulin,maintain hygiene;hydration,soft foods,infectious disease specialist,moderate
+gastritis,antibiotics;antihistamines,regular exercise;avoid allergens,soft foods,urologist,mild
+dermatitis,antibiotics;antivirals,regular exercise;rest,high fiber diet,neurologist,moderate
+urinary tract infection,ibuprofen;proton pump inhibitors,rest;regular exercise,balanced diet,cardiologist,moderate
+kidney stones,ibuprofen;bronchodilators,avoid cold exposure;rest,light diet,cardiologist,serious
+migraine,steroids;ibuprofen,rest;avoid allergens,warm fluids,dermatologist,mild
+constipation,bronchodilators;paracetamol,avoid spicy food;hydration,low sugar diet,cardiologist,moderate
+impetigo,antivirals;antibiotics,maintain hygiene;regular exercise,soft foods,urologist,serious
+gastritis,steroids;antivirals,regular exercise;monitor symptoms,high fiber diet,infectious disease specialist,serious
+urticaria,antibiotics;antivirals,monitor symptoms;hydration,soft foods,general physician,serious
+pleurisy,proton pump inhibitors;ibuprofen,rest;regular exercise,balanced diet,gastroenterologist,moderate
+alzheimer disease,oral rehydration salts;steroids,avoid cold exposure;avoid allergens,light diet,general physician,mild
+cluster headache,bronchodilators;paracetamol,monitor symptoms;avoid cold exposure,low salt diet,endocrinologist,serious
+scabies,antibiotics;insulin,hydration;avoid spicy food,low salt diet,neurologist,serious
+myocardial infarction,antihistamines;paracetamol,maintain hygiene;rest,soft foods,gastroenterologist,moderate
+mumps,paracetamol;bronchodilators,avoid cold exposure;regular exercise,high fiber diet,general physician,serious
+hypothyroidism,proton pump inhibitors;antivirals,maintain hygiene;regular exercise,warm fluids,infectious disease specialist,mild
+hepatitis b,antivirals;bronchodilators,maintain hygiene;hydration,low salt diet,pulmonologist,moderate
+migraine,insulin;steroids,avoid cold exposure;hydration,warm fluids,infectious disease specialist,moderate
+gastritis,antivirals;insulin,avoid cold exposure;avoid spicy food,balanced diet,cardiologist,moderate
+hepatitis b,paracetamol;antihistamines,monitor symptoms;maintain hygiene,soft foods,dermatologist,moderate
+gastritis,ibuprofen;antibiotics,monitor symptoms;maintain hygiene,high fiber diet,general physician,serious
+atrial fibrillation,proton pump inhibitors;bronchodilators,rest;regular exercise,high fiber diet,general physician,moderate
+peptic ulcer,steroids;proton pump inhibitors,maintain hygiene;avoid allergens,high fiber diet,pulmonologist,serious
+cluster headache,bronchodilators;proton pump inhibitors,avoid spicy food;hydration,balanced diet,infectious disease specialist,serious
+kidney stones,antivirals;proton pump inhibitors,avoid cold exposure;avoid spicy food,high fiber diet,neurologist,mild
+rosacea,antivirals;paracetamol,monitor symptoms;avoid allergens,warm fluids,urologist,mild
+cardiomyopathy,oral rehydration salts;antibiotics,avoid spicy food;hydration,warm fluids,cardiologist,serious
+thyroid cancer,paracetamol;ibuprofen,monitor symptoms;avoid spicy food,balanced diet,endocrinologist,mild
+prostatitis,bronchodilators;paracetamol,maintain hygiene;monitor symptoms,low sugar diet,general physician,moderate
+sinusitis,oral rehydration salts;proton pump inhibitors,maintain hygiene;avoid spicy food,low salt diet,cardiologist,serious
+gastroenteritis,insulin;bronchodilators,hydration;rest,low sugar diet,general physician,mild
+myocardial infarction,bronchodilators;insulin,avoid allergens;rest,low salt diet,cardiologist,serious
+tuberculosis,steroids;insulin,regular exercise;avoid allergens,low sugar diet,dermatologist,serious
+rosacea,oral rehydration salts;antivirals,regular exercise;avoid allergens,low salt diet,infectious disease specialist,moderate
+scabies,bronchodilators;paracetamol,hydration;maintain hygiene,light diet,urologist,serious
+gastroenteritis,oral rehydration salts;insulin,avoid allergens;avoid spicy food,high fiber diet,urologist,serious
+metabolic syndrome,steroids;paracetamol,avoid allergens;monitor symptoms,low salt diet,general physician,moderate
+food poisoning,insulin;paracetamol,hydration;avoid cold exposure,balanced diet,cardiologist,moderate
+food poisoning,ibuprofen;oral rehydration salts,avoid cold exposure;avoid allergens,low salt diet,general physician,mild
+dermatitis,oral rehydration salts;bronchodilators,avoid allergens;hydration,warm fluids,gastroenterologist,mild
+hypertension,antibiotics;steroids,avoid cold exposure;rest,light diet,cardiologist,serious
+mumps,bronchodilators;steroids,rest;monitor symptoms,light diet,dermatologist,moderate
+dermatitis,paracetamol;steroids,avoid spicy food;hydration,low sugar diet,general physician,moderate
+addison disease,proton pump inhibitors;bronchodilators,avoid allergens;avoid cold exposure,low sugar diet,urologist,mild
+cushing syndrome,bronchodilators;antibiotics,avoid allergens;monitor symptoms,high fiber diet,cardiologist,serious
+asthma,paracetamol;ibuprofen,monitor symptoms;rest,warm fluids,cardiologist,mild
+brain tumor,antivirals;ibuprofen,regular exercise;rest,high fiber diet,dermatologist,mild
+diabetes mellitus,oral rehydration salts;steroids,avoid allergens;monitor symptoms,light diet,cardiologist,moderate
+goiter,insulin;antihistamines,hydration;rest,soft foods,pulmonologist,moderate
+allergic rhinitis,ibuprofen;oral rehydration salts,regular exercise;maintain hygiene,balanced diet,gastroenterologist,serious
+influenza,antivirals;steroids,avoid spicy food;hydration,warm fluids,general physician,serious
+pancreatitis,insulin;bronchodilators,hydration;maintain hygiene,high fiber diet,neurologist,moderate
+peptic ulcer,proton pump inhibitors;antivirals,avoid allergens;rest,high fiber diet,cardiologist,mild
+atrial fibrillation,antibiotics;insulin,rest;avoid spicy food,balanced diet,dermatologist,serious
+peptic ulcer,bronchodilators;antihistamines,monitor symptoms;maintain hygiene,light diet,dermatologist,serious
+myocardial infarction,oral rehydration salts;proton pump inhibitors,maintain hygiene;avoid cold exposure,low sugar diet,gastroenterologist,moderate
+polycystic ovary syndrome,antivirals;antihistamines,monitor symptoms;hydration,low salt diet,dermatologist,serious
+influenza,bronchodilators;oral rehydration salts,rest;maintain hygiene,low salt diet,urologist,moderate
+concussion,ibuprofen;insulin,hydration;maintain hygiene,light diet,pulmonologist,serious
+addison disease,oral rehydration salts;bronchodilators,hydration;avoid cold exposure,balanced diet,general physician,mild
+eczema,bronchodilators;paracetamol,regular exercise;rest,balanced diet,dermatologist,moderate
+alzheimer disease,oral rehydration salts;steroids,avoid spicy food;avoid allergens,balanced diet,endocrinologist,mild
+addison disease,bronchodilators;antibiotics,avoid spicy food;regular exercise,low sugar diet,urologist,moderate
+bronchitis,antihistamines;steroids,hydration;regular exercise,high fiber diet,general physician,serious
+peptic ulcer,paracetamol;bronchodilators,rest;avoid cold exposure,balanced diet,general physician,mild
+myocardial infarction,paracetamol;ibuprofen,regular exercise;avoid cold exposure,warm fluids,pulmonologist,mild
+dengue fever,paracetamol;antivirals,regular exercise;hydration,low salt diet,infectious disease specialist,mild
+pleurisy,antihistamines;paracetamol,hydration;avoid cold exposure,soft foods,gastroenterologist,serious
+pleurisy,antivirals;bronchodilators,maintain hygiene;avoid allergens,soft foods,gastroenterologist,mild
+typhoid fever,antihistamines;antivirals,avoid spicy food;monitor symptoms,soft foods,urologist,serious
+sinusitis,steroids;insulin,monitor symptoms;regular exercise,light diet,urologist,serious
+coronary artery disease,bronchodilators;antibiotics,regular exercise;maintain hygiene,light diet,pulmonologist,serious
+lyme disease,antihistamines;antibiotics,hydration;avoid allergens,high fiber diet,gastroenterologist,moderate
+pancreatitis,antivirals;proton pump inhibitors,monitor symptoms;maintain hygiene,soft foods,neurologist,mild
+irritable bowel syndrome,ibuprofen;paracetamol,maintain hygiene;avoid cold exposure,low salt diet,endocrinologist,moderate
+psoriasis,bronchodilators;paracetamol,avoid allergens;regular exercise,light diet,dermatologist,moderate
+rosacea,ibuprofen;oral rehydration salts,regular exercise;maintain hygiene,high fiber diet,dermatologist,mild
+peripheral neuropathy,oral rehydration salts;ibuprofen,avoid cold exposure;rest,low salt diet,neurologist,moderate
+thyroid cancer,ibuprofen;insulin,hydration;maintain hygiene,soft foods,urologist,serious
+constipation,antihistamines;antivirals,avoid allergens;avoid spicy food,light diet,dermatologist,moderate
+alzheimer disease,oral rehydration salts;ibuprofen,avoid allergens;avoid cold exposure,low salt diet,infectious disease specialist,serious
+acid reflux,proton pump inhibitors;bronchodilators,maintain hygiene;hydration,balanced diet,cardiologist,serious
+sinusitis,insulin;antibiotics,hydration;maintain hygiene,light diet,general physician,mild
+celiac disease,antivirals;antihistamines,avoid cold exposure;maintain hygiene,balanced diet,urologist,moderate
+epilepsy,bronchodilators;antihistamines,avoid cold exposure;rest,high fiber diet,general physician,mild
+gastritis,insulin;ibuprofen,avoid spicy food;monitor symptoms,high fiber diet,infectious disease specialist,serious
+ringworm,bronchodilators;antibiotics,avoid cold exposure;monitor symptoms,high fiber diet,urologist,mild
+zika virus,antibiotics;antivirals,monitor symptoms;avoid cold exposure,soft foods,infectious disease specialist,mild
+celiac disease,insulin;paracetamol,avoid allergens;rest,balanced diet,urologist,moderate
+tension headache,proton pump inhibitors;antivirals,avoid cold exposure;avoid spicy food,low sugar diet,cardiologist,moderate
+alzheimer disease,antivirals;proton pump inhibitors,maintain hygiene;regular exercise,warm fluids,neurologist,moderate
+goiter,paracetamol;antivirals,avoid cold exposure;regular exercise,soft foods,cardiologist,moderate
+hypertension,steroids;bronchodilators,avoid allergens;rest,light diet,gastroenterologist,serious
+cluster headache,paracetamol;antivirals,avoid allergens;hydration,balanced diet,gastroenterologist,serious
+scabies,paracetamol;insulin,avoid allergens;avoid spicy food,warm fluids,dermatologist,mild
+polycystic ovary syndrome,bronchodilators;insulin,avoid cold exposure;hydration,low salt diet,gastroenterologist,serious
+myocardial infarction,antivirals;ibuprofen,monitor symptoms;avoid spicy food,high fiber diet,cardiologist,moderate
+ringworm,antihistamines;proton pump inhibitors,monitor symptoms;maintain hygiene,low salt diet,neurologist,serious
+myocardial infarction,bronchodilators;proton pump inhibitors,avoid cold exposure;maintain hygiene,warm fluids,pulmonologist,serious
+kidney stones,insulin;ibuprofen,avoid spicy food;avoid allergens,warm fluids,urologist,serious
+urticaria,steroids;bronchodilators,hydration;regular exercise,low sugar diet,urologist,moderate
+diarrhea,proton pump inhibitors;steroids,avoid allergens;monitor symptoms,light diet,dermatologist,serious
+pericarditis,ibuprofen;antivirals,rest;monitor symptoms,low salt diet,pulmonologist,serious
+appendicitis,antihistamines;oral rehydration salts,monitor symptoms;hydration,balanced diet,general physician,mild
+myocardial infarction,oral rehydration salts;insulin,rest;avoid spicy food,balanced diet,cardiologist,mild
+gallstones,oral rehydration salts;steroids,rest;regular exercise,light diet,urologist,serious
+psoriasis,oral rehydration salts;antihistamines,avoid allergens;rest,low sugar diet,pulmonologist,moderate
+atrial fibrillation,insulin;paracetamol,hydration;regular exercise,warm fluids,endocrinologist,moderate
+atrial fibrillation,bronchodilators;steroids,monitor symptoms;hydration,warm fluids,urologist,moderate
+appendicitis,oral rehydration salts;ibuprofen,regular exercise;hydration,warm fluids,cardiologist,serious
+atrial fibrillation,antivirals;ibuprofen,monitor symptoms;avoid allergens,low salt diet,dermatologist,serious
+covid-19,insulin;antibiotics,maintain hygiene;rest,low sugar diet,infectious disease specialist,serious
+allergic rhinitis,proton pump inhibitors;antivirals,avoid cold exposure;maintain hygiene,soft foods,dermatologist,moderate
+migraine,antihistamines;antivirals,avoid spicy food;rest,balanced diet,gastroenterologist,moderate
+pericarditis,steroids;insulin,rest;regular exercise,balanced diet,general physician,mild
+heart failure,antibiotics;ibuprofen,regular exercise;avoid spicy food,low sugar diet,infectious disease specialist,moderate
+cardiomyopathy,proton pump inhibitors;antivirals,avoid cold exposure;rest,warm fluids,pulmonologist,serious
+hypertension,oral rehydration salts;antivirals,avoid allergens;maintain hygiene,soft foods,neurologist,moderate
+epilepsy,insulin;proton pump inhibitors,avoid cold exposure;maintain hygiene,light diet,dermatologist,serious
