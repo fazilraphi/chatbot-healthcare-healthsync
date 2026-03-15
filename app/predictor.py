@@ -33,6 +33,12 @@ def symptoms_to_vector(symptoms):
 
     load_resources()
 
+    # Accept both string and list input
+    if isinstance(symptoms, str):
+        symptoms = [symptoms]
+
+    symptoms = [s.lower().strip() for s in symptoms]
+
     vector = np.zeros(len(symptom_list))
 
     for symptom in symptoms:
@@ -55,7 +61,6 @@ def predict_disease(symptoms):
     top5 = np.argsort(probs)[-5:][::-1]
 
     results = []
-
     seen_diseases = set()
 
     # ---------- ML MODEL PREDICTIONS ----------
