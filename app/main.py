@@ -13,13 +13,7 @@ from app.question_engine import generate_followups
 from app.context_parser import extract_duration, detect_severity
 
 
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    # Load model resources at startup
-    predictor.load_resources()
-    yield
-
-app = FastAPI(title="Healthcare Symptom Checker API", lifespan=lifespan)
+app = FastAPI(title="Healthcare Symptom Checker API")
 
 
 # CORS
@@ -49,8 +43,8 @@ def predict(data: SymptomInput):
 
     user_text = data.symptoms.lower()
 
-    # Extract symptoms
-    detected = extract_symptoms(user_text, predictor.symptom_list)
+    # Extract symptoms (Lazy loads symptom_list if needed)
+    detected = extract_symptoms(user_text, predictor.get_symptom_list())
 
     # Extract context
     duration = extract_duration(user_text)

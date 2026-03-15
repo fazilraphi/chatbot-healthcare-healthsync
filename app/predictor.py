@@ -6,47 +6,66 @@ from app.knowledge_graph import graph_reasoning, get_disease_details
 
 
 # --------- GLOBAL OBJECTS (LAZY LOADED) ---------
-model = None
-encoder = None
-symptom_list = None
-symptom_index = None
-treatment_dict = None
+_model = None
+_encoder = None
+_symptom_list = None
+_symptom_index = None
+_treatment_dict = None
 
 
-# --------- LOAD RESOURCES ONLY WHEN NEEDED ---------
-def load_resources():
+# --------- RESOURCE GETTERS (Ensures Lazy Loading) ---------
+def get_model():
+    global _model
+    if _model is None:
+        _model = joblib.load("models/disease_prediction_model.pkl", mmap_mode='r')
+    return _model
 
-    global model, encoder, symptom_list, symptom_index, treatment_dict
+def get_encoder():
+    global _encoder
+    if _encoder is None:
+        _encoder = joblib.load("models/label_encoder.pkl")
+    return _encoder
 
-    if model is None:
-        model = joblib.load("models/disease_prediction_model.pkl", mmap_mode='r')
+def get_symptom_list():
+    global _symptom_list, _symptom_index
+    if _symptom_list is None:
+        _symptom_list = joblib.load("models/symptom_list.pkl")
+        _symptom_index = {s: i for i, s in enumerate(_symptom_list)}
+    return _symptom_list
 
-    if encoder is None:
-        encoder = joblib.load("models/label_encoder.pkl")
+def get_symptom_index():
+    if _symptom_list is None: get_symptom_list()
+    return _symptom_index
 
-    if symptom_list is None:
-        symptom_list = joblib.load("models/symptom_list.pkl")
-
-        # create fast lookup dictionary
-        symptom_index = {s: i for i, s in enumerate(symptom_list)}
-
-    if treatment_dict is None:
-        treatment_dict = {}
+def get_treatment_dict():
+    global _treatment_dict
+    if _treatment_dict is None:
+        _treatment_dict = {}
         try:
             with open("data/disease_treatment_dataset.csv", mode='r', encoding='utf-8') as f:
                 reader = csv.DictReader(f)
                 for row in reader:
                     disease = row.get("disease")
-                    if disease and disease not in treatment_dict:
-                        treatment_dict[disease] = row
+                    if disease and disease not in _treatment_dict:
+                        _treatment_dict[disease] = row
         except Exception as e:
             print(f"Error loading treatment data: {e}")
+    return _treatment_dict
+
+
+# DEPRECATED: load_resources is now handled by individual getters
+def load_resources():
+    get_model()
+    get_encoder()
+    get_symptom_list()
+    get_treatment_dict()
 
 
 # --------- CONVERT SYMPTOMS TO VECTOR ---------
 def symptoms_to_vector(symptoms):
 
-    load_resources()
+    symptom_list = get_symptom_list()
+    symptom_index = get_symptom_index()
 
     if isinstance(symptoms, str):
         symptoms = [symptoms]
@@ -68,7 +87,9 @@ def symptoms_to_vector(symptoms):
 # --------- DISEASE PREDICTION ---------
 def predict_disease(symptoms):
 
-    load_resources()
+    model = get_model()
+    encoder = get_encoder()
+    treatment_dict = get_treatment_dict()
 
     vector = symptoms_to_vector(symptoms)
 
