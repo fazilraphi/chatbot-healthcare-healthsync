@@ -13,11 +13,7 @@ from app.context_parser import extract_duration, detect_severity
 app = FastAPI(title="Healthcare Symptom Checker API")
 
 
-@app.on_event("startup")
-def startup():
-    predictor.load_resources()
-
-
+# CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -39,22 +35,29 @@ def home():
 @app.post("/predict")
 def predict(data: SymptomInput):
 
+    # Load model resources ONLY when endpoint is called
+    predictor.load_resources()
+
     user_text = data.symptoms.lower()
 
+    # Extract symptoms
     detected = extract_symptoms(user_text, predictor.symptom_list)
 
+    # Extract context
     duration = extract_duration(user_text)
-
     severity = detect_severity(user_text)
 
+    # Emergency check
     if check_emergency(detected):
         return {
             "emergency": True,
             "message": "Possible emergency detected. Seek immediate medical care."
         }
 
+    # Predict diseases
     predictions = predictor.predict_disease(detected)
 
+    # Follow-up questions
     followups = generate_followups(detected)
 
     return {

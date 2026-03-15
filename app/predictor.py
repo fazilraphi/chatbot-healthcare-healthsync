@@ -4,15 +4,19 @@ import numpy as np
 
 from app.knowledge_graph import graph_reasoning, get_disease_details
 
-# ---------- GLOBAL OBJECTS ----------
+
+# --------- GLOBAL OBJECTS (LAZY LOADED) ---------
 model = None
 encoder = None
 symptom_list = None
+symptom_index = None
 treatment_dict = None
 
 
+# --------- LOAD RESOURCES ONLY WHEN NEEDED ---------
 def load_resources():
-    global model, encoder, symptom_list, treatment_dict
+
+    global model, encoder, symptom_list, symptom_index, treatment_dict
 
     if model is None:
         model = joblib.load("models/disease_prediction_model.pkl")
@@ -23,27 +27,38 @@ def load_resources():
     if symptom_list is None:
         symptom_list = joblib.load("models/symptom_list.pkl")
 
+        # create fast lookup dictionary
+        symptom_index = {s: i for i, s in enumerate(symptom_list)}
+
     if treatment_dict is None:
         treatment_df = pd.read_csv("data/disease_treatment_dataset.csv")
         treatment_df = treatment_df.drop_duplicates(subset="disease")
         treatment_dict = treatment_df.set_index("disease").to_dict(orient="index")
 
 
+# --------- CONVERT SYMPTOMS TO VECTOR ---------
 def symptoms_to_vector(symptoms):
 
     load_resources()
 
-    vector = np.zeros(len(symptom_list))
+    if isinstance(symptoms, str):
+        symptoms = [symptoms]
+
+    symptoms = [s.lower().strip() for s in symptoms]
+
+    # memory optimized vector
+    vector = np.zeros(len(symptom_list), dtype=np.int8)
 
     for symptom in symptoms:
 
-        if symptom in symptom_list:
-            idx = symptom_list.index(symptom)
+        if symptom in symptom_index:
+            idx = symptom_index[symptom]
             vector[idx] = 1
 
     return vector.reshape(1, -1)
 
 
+# --------- DISEASE PREDICTION ---------
 def predict_disease(symptoms):
 
     load_resources()
@@ -57,11 +72,12 @@ def predict_disease(symptoms):
     results = []
     seen_diseases = set()
 
-    # ---------- ML MODEL ----------
+    # ---------- ML MODEL PREDICTIONS ----------
     for i in top5:
 
         disease = encoder.inverse_transform([i])[0]
 
+        # filter unrealistic predictions
         if "pregnan" in disease.lower():
             continue
 
@@ -82,7 +98,8 @@ def predict_disease(symptoms):
 
         seen_diseases.add(disease)
 
-    # ---------- KNOWLEDGE GRAPH ----------
+
+    # ---------- KNOWLEDGE GRAPH REASONING ----------
     graph_predictions = graph_reasoning(symptoms)
 
     for disease, score in graph_predictions:
@@ -103,6 +120,7 @@ def predict_disease(symptoms):
             "source": "knowledge_graph"
         })
 
+    # ---------- SORT RESULTS ----------
     results = sorted(results, key=lambda x: x["probability"], reverse=True)
 
     return results[:5]
