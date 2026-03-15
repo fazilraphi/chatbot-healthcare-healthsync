@@ -27,7 +27,7 @@ async def global_exception_handler(request, exc):
     return {
         "error": True, 
         "message": str(exc),
-        "traceback": traceback.format_exc() if os.environ.get("DEBUG") else "Internal Server Error"
+        "traceback": traceback.format_exc()
     }
 
 @app.get("/health")
