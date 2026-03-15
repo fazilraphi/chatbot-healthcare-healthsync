@@ -81,8 +81,8 @@
             margin: 0 auto;
             background-color: var(--card-bg);
             box-shadow: var(--shadow);
-            margin-top: 2rem;
-            margin-bottom: 2rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
             border-radius: var(--radius-lg);
             display: flex;
             flex-direction: column;
@@ -153,7 +153,7 @@
             box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
         }
 
-        button {
+        button.send-btn {
             background-color: var(--primary);
             color: white;
             border: none;
@@ -167,18 +167,33 @@
             justify-content: center;
         }
 
-        button:hover {
+        button.send-btn:hover {
             background-color: var(--primary-hover);
         }
 
-        button:active {
+        button.send-btn:active {
             transform: scale(0.98);
         }
 
-        button:disabled {
-            background-color: var(--secondary);
-            cursor: not-allowed;
-            opacity: 0.7;
+        .followup-btn {
+            display: block;
+            width: 100%;
+            text-align: left;
+            background: white;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 0.75rem 1rem;
+            margin-top: 0.5rem;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .followup-btn:hover {
+            background: var(--primary);
+            color: white;
         }
 
         .prediction-card {
@@ -231,24 +246,10 @@
             display: block;
         }
 
-        .emergency-banner {
-            background-color: #fee2e2;
-            color: #b91c1c;
-            padding: 1rem;
-            border-radius: var(--radius-md);
-            border: 1px solid #fecaca;
-            margin-top: 0.5rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
         .typing {
             display: flex;
             gap: 4px;
             padding: 0.5rem;
-            align-items: center;
         }
 
         .dot {
@@ -267,21 +268,20 @@
             40% { transform: scale(1); }
         }
 
+        .med-tag {
+            background: #f1f5f9;
+            color: #475569;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin: 2px;
+            border: 1px solid #e2e8f0;
+        }
+
         @media (max-width: 768px) {
-            main {
-                margin: 0;
-                height: 100%;
-                border-radius: 0;
-            }
-            .chat-container {
-                padding: 1rem;
-            }
-            .message {
-                max-width: 90%;
-            }
-            .details-grid {
-                grid-template-columns: 1fr;
-            }
+            main { margin: 0; height: 100%; border-radius: 0; }
+            .message { max-width: 90%; }
         }
     </style>
 </head>
@@ -291,19 +291,19 @@
             <div class="logo-icon">H</div>
             <span>HealthSync AI</span>
         </div>
-        <div style="font-size: 0.85rem; color: var(--text-muted);">Secure & Private Analysis</div>
+        <div style="font-size: 0.85rem; color: var(--text-muted);">Conversational Diagnosis</div>
     </header>
 
     <main>
         <div class="chat-container" id="chat">
             <div class="message bot-message">
-                Hello! I am HealthSync AI. Please describe your symptoms (e.g., "I have a high fever and headache since 2 days"). I'll analyze them for you.
+                Hello! I am HealthSync AI. Please describe how you're feeling. For example, "I have a headache and feel nauseous."
             </div>
         </div>
 
         <div class="input-area">
-            <input type="text" id="userInput" placeholder="Type symptoms here..." autocomplete="off">
-            <button id="sendBtn">
+            <input type="text" id="userInput" placeholder="Describe symptoms..." autocomplete="off">
+            <button id="sendBtn" class="send-btn">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
             </button>
         </div>
@@ -313,6 +313,8 @@
         const chat = document.getElementById('chat');
         const userInput = document.getElementById('userInput');
         const sendBtn = document.getElementById('sendBtn');
+        
+        let symptomHistory = [];
 
         function appendMessage(role, content, isHtml = false) {
             const msgDiv = document.createElement('div');
@@ -336,42 +338,39 @@
             return typingDiv;
         }
 
-        async function handleSend() {
-            const text = userInput.value.trim();
+        async function processInput(text) {
             if (!text) return;
 
-            userInput.value = '';
+            // Simple context accumulation
+            symptomHistory.push(text);
+            const fullQuery = symptomHistory.join(". ");
+
             userInput.disabled = true;
             sendBtn.disabled = true;
 
-            appendMessage('user', text);
             const typing = showTyping();
 
             try {
                 const response = await fetch('/predict', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ symptoms: text })
+                    body: JSON.stringify({ symptoms: fullQuery })
                 });
 
                 const data = await response.json();
                 typing.remove();
 
                 if (data.emergency) {
-                    appendMessage('bot', `
-                        <div class="emergency-banner">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-                            EMERGENCY DETECTED
-                        </div>
-                        <p style="margin-top: 10px">${data.message}</p>
-                    `, true);
+                    appendMessage('bot', `<div style="color:var(--error); font-weight:bold;">Emergency Alert!</div><p>${data.message}</p>`, true);
                     return;
                 }
 
                 if (data.predictions && data.predictions.length > 0) {
-                    let html = `<p>Based on your symptoms (${data.detected_symptoms.join(', ')}), here is what I found:</p>`;
+                    let html = `<p>I've analyzed your symptoms. Here are the most likely conditions:</p>`;
                     
-                    data.predictions.slice(0, 3).forEach(pred => {
+                    data.predictions.slice(0, 2).forEach(pred => {
+                        const meds = pred.medications ? pred.medications.split(';').map(m => `<span class="med-tag">${m.trim()}</span>`).join('') : 'None reported';
+                        
                         html += `
                             <div class="prediction-card">
                                 <div class="prediction-header">
@@ -380,12 +379,12 @@
                                 </div>
                                 <div class="details-grid">
                                     <div class="detail-item">
-                                        <span class="detail-label">Recommended Care</span>
-                                        ${pred.doctor || 'General Physician'}
+                                        <span class="detail-label">Care Level</span>
+                                        ${pred.doctor || 'General physician'}
                                     </div>
                                     <div class="detail-item">
-                                        <span class="detail-label">Treatment</span>
-                                        ${pred.medications || 'Rest & Fluids'}
+                                        <span class="detail-label">Potential Treatments</span>
+                                        <div style="margin-top:4px">${meds}</div>
                                     </div>
                                 </div>
                             </div>
@@ -393,18 +392,21 @@
                     });
 
                     if (data.follow_up_questions && data.follow_up_questions.length > 0) {
-                        html += `<p style="margin-top: 15px; font-weight: 600;">To be more certain, please consider:</p>`;
-                        html += `<ul style="margin-left: 20px; font-size: 0.9rem;">${data.follow_up_questions.map(q => `<li>${q}</li>`).join('')}</ul>`;
+                        html += `<p style="margin-top: 15px; font-weight: 600;">To help me narrow this down, could you answer these?</p>`;
+                        data.follow_up_questions.slice(0, 3).forEach(q => {
+                            const btnId = 'btn-' + Math.random().toString(36).substr(2, 9);
+                            html += `<button class="followup-btn" onclick="sendFollowup('${q.replace(/'/g, "\\'")}')">${q}</button>`;
+                        });
                     }
 
                     appendMessage('bot', html, true);
                 } else {
-                    appendMessage('bot', "I couldn't identify specific conditions. Please try describing your symptoms differently or consult a doctor.");
+                    appendMessage('bot', "I couldn't identify specific conditions. Could you tell me more about how you feel?");
                 }
 
             } catch (err) {
                 typing.remove();
-                appendMessage('bot', "Sorry, I encountered an error. Please try again later.");
+                appendMessage('bot', "I'm having trouble connecting. Please try again.");
             } finally {
                 userInput.disabled = false;
                 sendBtn.disabled = false;
@@ -412,9 +414,29 @@
             }
         }
 
-        sendBtn.addEventListener('click', handleSend);
+        window.sendFollowup = (text) => {
+            appendMessage('user', text);
+            processInput(text);
+        };
+
+        sendBtn.addEventListener('click', () => {
+            const text = userInput.value.trim();
+            if (text) {
+                appendMessage('user', text);
+                processInput(text);
+                userInput.value = '';
+            }
+        });
+
         userInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') handleSend();
+            if (e.key === 'Enter') {
+                const text = userInput.value.trim();
+                if (text) {
+                    appendMessage('user', text);
+                    processInput(text);
+                    userInput.value = '';
+                }
+            }
         });
     </script>
 </body>
