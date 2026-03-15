@@ -4,7 +4,7 @@ import numpy as np
 
 from app.knowledge_graph import graph_reasoning, get_disease_details
 
-# --------- GLOBAL OBJECTS (LAZY LOADED) ---------
+# ---------- GLOBAL OBJECTS ----------
 model = None
 encoder = None
 symptom_list = None
@@ -33,12 +33,6 @@ def symptoms_to_vector(symptoms):
 
     load_resources()
 
-    # Accept both string and list input
-    if isinstance(symptoms, str):
-        symptoms = [symptoms]
-
-    symptoms = [s.lower().strip() for s in symptoms]
-
     vector = np.zeros(len(symptom_list))
 
     for symptom in symptoms:
@@ -63,7 +57,7 @@ def predict_disease(symptoms):
     results = []
     seen_diseases = set()
 
-    # ---------- ML MODEL PREDICTIONS ----------
+    # ---------- ML MODEL ----------
     for i in top5:
 
         disease = encoder.inverse_transform([i])[0]
@@ -88,7 +82,7 @@ def predict_disease(symptoms):
 
         seen_diseases.add(disease)
 
-    # ---------- KNOWLEDGE GRAPH REASONING ----------
+    # ---------- KNOWLEDGE GRAPH ----------
     graph_predictions = graph_reasoning(symptoms)
 
     for disease, score in graph_predictions:

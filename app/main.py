@@ -2,21 +2,22 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.predictor import predict_disease, load_resources, symptom_list
+import app.predictor as predictor
+
 from app.symptom_extractor import extract_symptoms
 from app.triage import check_emergency
 from app.question_engine import generate_followups
 from app.context_parser import extract_duration, detect_severity
 
+
 app = FastAPI(title="Healthcare Symptom Checker API")
 
-# ---------- Load ML resources once ----------
+
 @app.on_event("startup")
 def startup():
-    load_resources()
+    predictor.load_resources()
 
 
-# ---------- CORS ----------
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -40,7 +41,7 @@ def predict(data: SymptomInput):
 
     user_text = data.symptoms.lower()
 
-    detected = extract_symptoms(user_text, symptom_list)
+    detected = extract_symptoms(user_text, predictor.symptom_list)
 
     duration = extract_duration(user_text)
 
@@ -52,7 +53,7 @@ def predict(data: SymptomInput):
             "message": "Possible emergency detected. Seek immediate medical care."
         }
 
-    predictions = predict_disease(detected)
+    predictions = predictor.predict_disease(detected)
 
     followups = generate_followups(detected)
 
