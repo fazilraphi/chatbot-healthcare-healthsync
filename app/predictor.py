@@ -17,20 +17,26 @@ _treatment_dict = None
 def get_model():
     global _model
     if _model is None:
+        print("Loading ML model (mmap)...")
         _model = joblib.load("models/disease_prediction_model.pkl", mmap_mode='r')
+        print("Model loaded successfully.")
     return _model
 
 def get_encoder():
     global _encoder
     if _encoder is None:
+        print("Loading label encoder...")
         _encoder = joblib.load("models/label_encoder.pkl")
+        print("Encoder loaded.")
     return _encoder
 
 def get_symptom_list():
     global _symptom_list, _symptom_index
     if _symptom_list is None:
+        print("Loading symptom list...")
         _symptom_list = joblib.load("models/symptom_list.pkl")
         _symptom_index = {s: i for i, s in enumerate(_symptom_list)}
+        print("Symptom list loaded.")
     return _symptom_list
 
 def get_symptom_index():
