@@ -1,12 +1,12 @@
-from contextlib import asynccontextmanager
+import os
+import sys
+import traceback
+
 from fastapi import FastAPI
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
-import traceback
-import sys
-import os
+from pydantic import BaseModel
 
 import app.predictor as predictor
 
@@ -16,20 +16,27 @@ from app.question_engine import generate_followups
 from app.context_parser import extract_duration, detect_severity
 
 
+# Prevent XGBoost from spawning many threads (Render memory fix)
+os.environ["OMP_NUM_THREADS"] = "1"
+
+
 app = FastAPI(title="Healthcare Symptom Checker API")
 
 
-# Global Error Handler
+# Global error handler
 @app.exception_handler(Exception)
 async def global_exception_handler(request, exc):
     print(f"ERROR: {exc}", file=sys.stderr)
     traceback.print_exc()
+
     return {
-        "error": True, 
+        "error": True,
         "message": str(exc),
         "traceback": traceback.format_exc()
     }
 
+
+# Health check
 @app.get("/health")
 def health():
     return {
@@ -38,7 +45,8 @@ def health():
         "files": os.listdir(".")
     }
 
-# Static Files
+
+# Static files
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
@@ -56,24 +64,19 @@ def predict(data: SymptomInput):
 
     user_text = data.symptoms.lower()
 
-    # Extract symptoms (Lazy loads symptom_list if needed)
     detected = extract_symptoms(user_text, predictor.get_symptom_list())
 
-    # Extract context
     duration = extract_duration(user_text)
     severity = detect_severity(user_text)
 
-    # Emergency check
     if check_emergency(detected):
         return {
             "emergency": True,
             "message": "Possible emergency detected. Seek immediate medical care."
         }
 
-    # Predict diseases
     predictions = predictor.predict_disease(detected)
 
-    # Follow-up questions
     followups = generate_followups(detected)
 
     return {
