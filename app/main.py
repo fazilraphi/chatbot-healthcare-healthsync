@@ -2,27 +2,27 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.predictor import predict_disease, symptom_list
+from app.predictor import predict_disease, load_resources, symptom_list
 from app.symptom_extractor import extract_symptoms
 from app.triage import check_emergency
 from app.question_engine import generate_followups
 from app.context_parser import extract_duration, detect_severity
 
-
 app = FastAPI(title="Healthcare Symptom Checker API")
 
+# ---------- Load ML resources once ----------
+@app.on_event("startup")
+def startup():
+    load_resources()
 
-# CORS configuration
-origins = [
-    "*"
-]
 
+# ---------- CORS ----------
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,      # allows all origins
+    allow_origins=["*"],
     allow_credentials=True,
-    allow_methods=["*"],        # allow all HTTP methods
-    allow_headers=["*"],        # allow all headers
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 
@@ -38,11 +38,13 @@ def home():
 @app.post("/predict")
 def predict(data: SymptomInput):
 
-    detected = extract_symptoms(data.symptoms, symptom_list)
+    user_text = data.symptoms.lower()
 
-    duration = extract_duration(data.symptoms)
+    detected = extract_symptoms(user_text, symptom_list)
 
-    severity = detect_severity(data.symptoms)
+    duration = extract_duration(user_text)
+
+    severity = detect_severity(user_text)
 
     if check_emergency(detected):
         return {
@@ -55,6 +57,7 @@ def predict(data: SymptomInput):
     followups = generate_followups(detected)
 
     return {
+        "input_text": user_text,
         "detected_symptoms": detected,
         "duration": duration,
         "severity": severity,
