@@ -1,3 +1,4 @@
+from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
@@ -10,7 +11,13 @@ from app.question_engine import generate_followups
 from app.context_parser import extract_duration, detect_severity
 
 
-app = FastAPI(title="Healthcare Symptom Checker API")
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Load model resources at startup
+    predictor.load_resources()
+    yield
+
+app = FastAPI(title="Healthcare Symptom Checker API", lifespan=lifespan)
 
 
 # CORS
@@ -34,9 +41,6 @@ def home():
 
 @app.post("/predict")
 def predict(data: SymptomInput):
-
-    # Load model resources ONLY when endpoint is called
-    predictor.load_resources()
 
     user_text = data.symptoms.lower()
 

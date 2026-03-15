@@ -1,5 +1,5 @@
 import joblib
-import pandas as pd
+import csv
 import numpy as np
 
 from app.knowledge_graph import graph_reasoning, get_disease_details
@@ -19,7 +19,7 @@ def load_resources():
     global model, encoder, symptom_list, symptom_index, treatment_dict
 
     if model is None:
-        model = joblib.load("models/disease_prediction_model.pkl")
+        model = joblib.load("models/disease_prediction_model.pkl", mmap_mode='r')
 
     if encoder is None:
         encoder = joblib.load("models/label_encoder.pkl")
@@ -31,9 +31,16 @@ def load_resources():
         symptom_index = {s: i for i, s in enumerate(symptom_list)}
 
     if treatment_dict is None:
-        treatment_df = pd.read_csv("data/disease_treatment_dataset.csv")
-        treatment_df = treatment_df.drop_duplicates(subset="disease")
-        treatment_dict = treatment_df.set_index("disease").to_dict(orient="index")
+        treatment_dict = {}
+        try:
+            with open("data/disease_treatment_dataset.csv", mode='r', encoding='utf-8') as f:
+                reader = csv.DictReader(f)
+                for row in reader:
+                    disease = row.get("disease")
+                    if disease and disease not in treatment_dict:
+                        treatment_dict[disease] = row
+        except Exception as e:
+            print(f"Error loading treatment data: {e}")
 
 
 # --------- CONVERT SYMPTOMS TO VECTOR ---------
