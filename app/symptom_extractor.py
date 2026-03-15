@@ -1,7 +1,9 @@
 import re
+
 from sentence_transformers import SentenceTransformer, util
 
 
+# load embedding model once
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
 
@@ -68,15 +70,20 @@ def semantic_symptom_match(user_input, symptom_list):
 
     detected = []
 
-    user_embedding = model.encode(user_input, convert_to_tensor=True)
-    symptom_embeddings = model.encode(symptom_list, convert_to_tensor=True)
+    try:
 
-    scores = util.cos_sim(user_embedding, symptom_embeddings)[0]
+        user_embedding = model.encode([user_input], convert_to_tensor=True)
+        symptom_embeddings = model.encode(symptom_list, convert_to_tensor=True)
 
-    for i, score in enumerate(scores):
+        scores = util.cos_sim(user_embedding, symptom_embeddings)[0]
 
-        if score > 0.55:
-            detected.append(symptom_list[i])
+        for i, score in enumerate(scores):
+
+            if float(score) > 0.55:
+                detected.append(symptom_list[i])
+
+    except Exception:
+        pass
 
     return detected
 
@@ -87,15 +94,21 @@ def extract_symptoms(user_input, symptom_list):
 
     detected = []
 
+    # direct match
     for symptom in symptom_list:
+
         if symptom in user_input:
             detected.append(symptom)
 
+    # synonym phrase match
     for symptom, phrases in SYMPTOM_SYNONYMS.items():
+
         for phrase in phrases:
+
             if phrase in user_input:
                 detected.append(symptom)
 
+    # semantic matching
     detected += semantic_symptom_match(user_input, symptom_list)
 
     return list(set(detected))

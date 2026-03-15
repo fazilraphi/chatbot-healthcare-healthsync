@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
 
 from app.predictor import predict_disease, symptom_list
 from app.symptom_extractor import extract_symptoms
@@ -9,6 +10,20 @@ from app.context_parser import extract_duration, detect_severity
 
 
 app = FastAPI(title="Healthcare Symptom Checker API")
+
+
+# CORS configuration
+origins = [
+    "*"
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,      # allows all origins
+    allow_credentials=True,
+    allow_methods=["*"],        # allow all HTTP methods
+    allow_headers=["*"],        # allow all headers
+)
 
 
 class SymptomInput(BaseModel):
@@ -30,7 +45,6 @@ def predict(data: SymptomInput):
     severity = detect_severity(data.symptoms)
 
     if check_emergency(detected):
-
         return {
             "emergency": True,
             "message": "Possible emergency detected. Seek immediate medical care."
